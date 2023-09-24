@@ -567,21 +567,33 @@ p {
   display: block;
 }
 
+
+
+
+
+
+
 /* Media query for screens with max width 768px (typical mobile screens) */
 @media (max-width: 768px) {
   .sticky-bar {
-    padding: 5px 0;
+    display: flex;
+    align-items: center; /* Vertically center the content */
+    justify-content: space-between; /* Horizontally space the content */
+    height: 60px; /* Adjust the height as needed */
+    padding: 10px 20px; /* Adjust the top and bottom padding as needed */
   }
 
   .sticky-bar a,
   .sticky-bar button {
     padding: 5px 10px;
     font-size: 14px;
+    text-align: center; /* Center the text within buttons and links */
   }
 
   .dropdown-content {
     min-width: 120px;
     box-shadow: none;
+    text-align: center; /* Center the text within dropdown items */
   }
 
   .dropdown-content a {
@@ -589,37 +601,6 @@ p {
     font-size: 14px;
   }
 }
-
-.light-mode .sticky-bar {
-  background-color: var(--color-primary-light); /* Light background color */
-}
-
-.light-mode .sticky-bar a,
-.light-mode .sticky-bar button {
-  color: var(--color-dark); /* Light theme text color */
-  /* ... other light theme styles ... */
-}
-
-.light-mode .sticky-bar a:hover {
-  color: var(--color-secondary); /* Light theme hover color */
-  /* ... other light theme styles ... */
-}
-
-.light-mode .sticky-bar button:hover {
-  color: var(--color-secondary); /* Light theme hover color */
-  /* ... other light theme styles ... */
-}
-
-.light-mode .dropdown-content {
-  background-color: var(--color-primary-light); /* Light background color */
-  /* ... other light theme styles ... */
-}
-
-.light-mode .dropdown-content a:hover {
-  background-color: var(--color-grey-1); /* Light theme hover background color */
-  /* ... other light theme styles ... */
-}
-
 
 
 
