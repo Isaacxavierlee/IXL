@@ -495,6 +495,23 @@ p {
 }
 
 /* Common styles for both light and dark modes */
+.sticky-bar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-grey-6); /* Background color for the sticky bar */
+  padding: 10px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.sticky-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px; /* Adjust the maximum width as needed */
+  width: 100%;
+}
+
 .sticky-bar a,
 .sticky-bar button {
   color: var(--color-white);
@@ -502,8 +519,8 @@ p {
   padding: 10px 20px;
   margin: 0 10px;
   transition: color 0.3s;
-  display: inline-block;
   border-bottom: none;
+  font-weight: bold; /* Add font weight for better visibility */
 }
 
 .sticky-bar a:hover {
@@ -567,45 +584,18 @@ p {
   display: block;
 }
 
-
-
-
-
-
-
-/* Media query for screens with max width 768px (typical mobile screens) */
+/* Responsive adjustments */
 @media (max-width: 768px) {
   .sticky-bar {
-    display: flex;
-    align-items: center; /* Vertically center the content */
-    justify-content: space-between; /* Horizontally space the content */
-    height: 60px; /* Adjust the height as needed */
-    padding: 10px 20px; /* Adjust the top and bottom padding as needed */
+    flex-wrap: wrap;
+    justify-content: flex-start;
   }
-
   .sticky-bar a,
-  .sticky-bar button {
-    padding: 5px 10px;
-    font-size: 14px;
-    text-align: center; /* Center the text within buttons and links */
-  }
-
-  .dropdown-content {
-    min-width: 120px;
-    box-shadow: none;
-    text-align: center; /* Center the text within dropdown items */
-  }
-
-  .dropdown-content a {
-    padding: 5px 10px;
-    font-size: 14px;
+  .sticky-bar button,
+  .dropdown {
+    margin: 5px; /* Adjust margin for spacing on smaller screens */
   }
 }
-
-
-
-
-
 
 
 
