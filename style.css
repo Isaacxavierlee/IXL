@@ -598,11 +598,18 @@ p {
 }
 
 
+.controls-container {
+  position: relative;
+  z-index: 11;
+}
+
+.controls.hidden {
+  display: none;
+}
 
 .controls-container .controls a {
-        text-decoration: none; /* Remove the underline */
-    }
-
+  text-decoration: none;
+}
 
 .controls {
   position: fixed;
@@ -615,10 +622,11 @@ p {
   justify-content: center;
   transform: translateY(-50%);
 }
+
 .controls .control {
   padding: 1rem;
   cursor: pointer;
-  background-color: var(--color-grey-4);
+  background-color: rgba(230, 230, 250, 0.7);
   width: 55px;
   height: 55px;
   border-radius: 50%;
@@ -626,23 +634,36 @@ p {
   justify-content: center;
   align-items: center;
   margin: 0.7rem 0;
-  box-shadow: var(--box-shadow-1);
-}
-.controls .control i {
-  font-size: 1.2rem;
-  color: var(--color-grey-2);
-  pointer-events: none;
-}
-.controls .active-btn {
-  background-color: var(--color-secondary);
-  transition: all 0.4s ease-in-out;
-}
-.controls .active-btn i {
-  color: var(--color-white);
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.controls.hidden {
-    display: none;
+.controls .control i {
+  font-size: 1.2rem;
+  color: #FFFFFF;
+  pointer-events: none;
+  transition: color 0.3s ease;
+}
+
+/* On hover, make them slightly more opaque */
+.controls .control:hover,
+.theme-btn:hover {
+  background-color: rgba(230, 230, 250, 0.9);
+  transform: scale(1.1);
+}
+
+
+.controls .control:hover i {
+  color: #333333;/* Light Pink icon color on hover */
+}
+
+.controls .active-btn {
+  background-color: #2aac8c; /* Light Pink background color for active button */
+  transition: all 0.4s ease-in-out;
+}
+
+.controls .active-btn i {
+  color: #ffffff; /* Light Green icon color for active button */
 }
 
 .theme-btn {
@@ -651,7 +672,7 @@ p {
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  background-color: var(--color-grey-4);
+  background-color:#333333; /* Light Pink background color for theme button */
   cursor: pointer;
   position: fixed;
   display: flex;
@@ -659,26 +680,16 @@ p {
   align-items: center;
   box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
   transition: all 0.1s ease-in-out;
+  z-index: 12; /* Set a higher z-index to keep the theme button above other content */
 }
+
 .theme-btn:active {
   transform: translateY(-3px);
 }
+
 .theme-btn i {
   font-size: 1.4rem;
-  color: var(--color-grey-2);
+  color: #FFFFFF; /* White icon color for theme button */
   pointer-events: none;
 }
-
-.controls.light-mode .control i {
-    color: var(--color-grey-2);
-}
-
-.controls.dark-mode .control i {
-    color: var(--color-white);
-}
-
-.controls .active-btn i {
-    color: var(--color-white);
-}
-
 
